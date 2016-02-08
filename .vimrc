@@ -38,9 +38,12 @@ Plugin 'tpope/vim-fugitive'
 " Git niceties for Vim version < 7.2
 Plugin 'tpope/vim-git'
 " Instant markdown preview
+" In Firefox, if you want the preview window to close automatically like in
+" other browsers, go to about:config and set
+" dom.allow_scripts_to_close_windows to true.
 Plugin 'suan/vim-instant-markdown'
-" Tabularize text in Vim using Regex. Needed for vim-markdown and the plugin
-" definition needs to come before it.
+" Tabularize text in Vim using Regex
+" Needed for vim-markdown and the plugin definition needs to come before it.
 Plugin 'godlygeek/tabular'
 " Syntax-highlighting, rules matching and mapping for markdown.
 Plugin 'plasticboy/vim-markdown'
