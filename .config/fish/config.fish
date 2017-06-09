@@ -14,13 +14,20 @@ source $HOME/.config/fish/nvm-wrapper/nvm.fish
 set -x SCALA_VERSION latest
 set -x SCALA_HOME $HOME/bin/scala/$SCALA_VERSION
 
+# SDKMAN setup
+set -x SDKMAN_HOME $HOME/.sdkman
+
+# Kotlin setup
+set -x KOTLIN_VERSION current
+set -x KOTLIN_HOME $SDKMAN_HOME/candidates/kotlin/$KOTLIN_VERSION
+
 # Spark setup
 set -x SPARK_VERSION 2.1.0
 set -x SPARK_HOME $HOME/bin/spark/$SPARK_VERSION
 set -x PYTHONPATH $SPARK_HOME/python $PYTHONPATH
 
-# Update PATH to include Go, Rust and Scala Lang binaries.
-set -gx PATH $GOPATH/bin $HOME/.cargo/bin $SCALA_HOME/bin $PATH
+# Update PATH to include Kotlin, Go, Rust and Scala Lang binaries.
+set -gx PATH $KOTLIN_HOME/bin $HOME/.cargo/bin $GOPATH/bin $SCALA_HOME/bin $PATH
 
 # Set default editor to Vim
 set -x EDITOR vim
