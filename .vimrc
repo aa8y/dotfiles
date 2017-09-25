@@ -47,6 +47,8 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'godlygeek/tabular'
 " Syntax-highlighting, rules matching and mapping for markdown.
 Plugin 'plasticboy/vim-markdown'
+" Javascript ES6
+Plugin 'isRuslan/vim-es6'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " All of your Plugins must be added before the following line.

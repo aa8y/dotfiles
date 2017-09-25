@@ -1,36 +1,20 @@
-# Flink setup
-set -x FLINK_SCALA_VERSION 2.10
-set -x FLINK_VERSION 1.2.0
-set -x FLINK_HOME $HOME/bin/flink/scala-$FLINK_SCALA_VERSION/$FLINK_VERSION
-
-# Path for all the go code
-set -x GOPATH $HOME/code/gocode
-
-# https://github.com/passcod/nvm-fish-wrapper
-set -x NVM_DIR ~/.nvm
-source $HOME/.config/fish/nvm-wrapper/nvm.fish
-
-# Scala setup
-set -x SCALA_VERSION latest
-set -x SCALA_HOME $HOME/bin/scala/$SCALA_VERSION
-
-# SDKMAN setup
-set -x SDKMAN_HOME $HOME/.sdkman
-
-# Kotlin setup
-set -x KOTLIN_VERSION current
-set -x KOTLIN_HOME $SDKMAN_HOME/candidates/kotlin/$KOTLIN_VERSION
-
-# Spark setup
-set -x SPARK_VERSION 2.1.0
-set -x SPARK_HOME $HOME/bin/spark/$SPARK_VERSION
-set -x PYTHONPATH $SPARK_HOME/python $PYTHONPATH
-
-# Update PATH to include Kotlin, Go, Rust and Scala Lang binaries.
-set -gx PATH $KOTLIN_HOME/bin $HOME/.cargo/bin $GOPATH/bin $SCALA_HOME/bin $PATH
-
-# Set default editor to Vim
+## Set default editor to Vim
 set -x EDITOR vim
+
+## Set application specific paths
+set -gx BREW_HOME $HOME/.linuxbrew
+# Run `mkdir -p $GOPATH/bin` the first time.
+set -gx GOPATH $HOME/code/go
+set -gx GOROOT $BREW_HOME/Cellar/go/1.9
+set -gx NVM_DIR $HOME/.nvm
+
+## Set global paths
+set -gx PATH $HOME/.rbenv/shims $HOME/.linuxbrew/bin $HOME/.bin $GOPATH/bin $PATH
+set -gx MANPATH (brew --prefix)/share/man $MANPATH
+set -gx INFOPATH (brew --prefix)/share/info $INFOPATH
+
+## Misc
+nvm use stable
 
 # LINUX ONLY
 # Enable ssh-agent on reboot.
