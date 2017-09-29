@@ -27,28 +27,38 @@ Plugin 'gmarik/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other Vundle plugins to be added here.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Scala
-Plugin 'derekwyatt/vim-scala'
-" Ruby/Rails
-Plugin 'tpope/vim-rails'
 " Fish scripting
 Plugin 'dag/vim-fish'
 " Git integration
 Plugin 'tpope/vim-fugitive'
 " Git niceties for Vim version < 7.2
 Plugin 'tpope/vim-git'
-" Instant markdown preview
+" Javascript ES6
+Plugin 'isRuslan/vim-es6'
+" JSON
+Plugin 'elzr/vim-json'
+" Markdown: Instant preview
 " In Firefox, if you want the preview window to close automatically like in
 " other browsers, go to about:config and set
 " dom.allow_scripts_to_close_windows to true.
 Plugin 'suan/vim-instant-markdown'
+" Markdown: Syntax-highlighting, rules matching and mapping.
+Plugin 'plasticboy/vim-markdown'
+" Pug (formerly Jade) templating engine
+Plugin 'digitaltoad/vim-pug'
+" Ruby/Rails
+Plugin 'tpope/vim-rails'
+" SBT
+Plugin 'derekwyatt/vim-sbt'
+" Scala
+Plugin 'derekwyatt/vim-scala'
 " Tabularize text in Vim using Regex
 " Needed for vim-markdown and the plugin definition needs to come before it.
 Plugin 'godlygeek/tabular'
-" Syntax-highlighting, rules matching and mapping for markdown.
-Plugin 'plasticboy/vim-markdown'
-" Javascript ES6
-Plugin 'isRuslan/vim-es6'
+" Terraform
+Plugin 'hashivim/vim-terraform'
+" Tex
+Plugin 'lervag/vimtex'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " All of your Plugins must be added before the following line.
