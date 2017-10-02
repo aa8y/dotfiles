@@ -9,7 +9,7 @@ set -gx GOROOT $BREW_HOME/Cellar/go/1.9
 set -gx NVM_DIR $HOME/.nvm
 
 ## Set global paths
-set -gx PATH $HOME/.rbenv/shims $HOME/.linuxbrew/bin $HOME/.bin $GOPATH/bin $PATH
+set -gx PATH $HOME/.rbenv/shims $HOME/.linuxbrew/bin $HOME/.local/bin $GOPATH/bin $PATH
 set -gx MANPATH (brew --prefix)/share/man $MANPATH
 set -gx INFOPATH (brew --prefix)/share/info $INFOPATH
 

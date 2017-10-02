@@ -59,6 +59,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'hashivim/vim-terraform'
 " Tex
 Plugin 'lervag/vimtex'
+" Vim thin tabline/status.
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " All of your Plugins must be added before the following line.
@@ -151,6 +154,11 @@ set visualbell t_vb=
 " Disable code folding, which is how vim-fish and vim-markdown behave by
 " default.
 set nofoldenable
+
+" Install fonts from: https://github.com/powerline/fonts
+" Select the font to use in your terminal profile.
+" Eg. Ubuntu Mono Derivative powerline Regular
+let g:airline_powerline_fonts=1
 
 "============================================================================"
 " END SETTING OPTIONS
