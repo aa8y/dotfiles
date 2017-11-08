@@ -1,9 +1,10 @@
 {
   "segments": [
-    "ssh", 
-    "cwd", 
-    "git", 
-    "jobs", 
+    "ssh",
+    "hostname",
+    "cwd",
+    "git",
+    "jobs",
     "root"
   ]
 }
