@@ -8,11 +8,14 @@ set -gx BREW_HOME $HOME/.linuxbrew
 set -gx GOPATH $HOME/code/go
 # Run `brew install go`.
 set -gx GOROOT $BREW_HOME/Cellar/go/1.9
+# Java
+set -gx JAVA_HOME $HOME/.sdkman/candidates/java/current
 # Run `brew install nvm`.
 set -gx NVM_DIR $HOME/.nvm
 
 ## Set global paths
-set -gx PATH $BREW_HOME/bin $HOME/.local/bin $GOPATH/bin $PATH
+set -gx PATH $BREW_HOME/bin $HOME/.local/bin $GOPATH/bin $JAVA_HOME/bin $PATH
+set -gx PATH $HOME/.rbenv/shims $PATH
 set -gx MANPATH (brew --prefix)/share/man $MANPATH
 set -gx INFOPATH (brew --prefix)/share/info $INFOPATH
 
