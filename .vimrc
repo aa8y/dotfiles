@@ -43,6 +43,8 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'derekwyatt/vim-sbt'
 " Scala
 Plugin 'derekwyatt/vim-scala'
+" Scalafmt
+Plugin 'Chiel92/vim-autoformat'
 " Terraform
 Plugin 'hashivim/vim-terraform'
 " Vim thin tabline/status.
@@ -157,6 +159,14 @@ let g:airline_powerline_fonts=1
 " `F5`: Remove all trailing whitespace.
 " Refer: http://vi.stackexchange.com/a/2285
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" Run Scalafmt on file.
+" Refer: http://scalameta.org/scalafmt/#Vim
+" Expects Scalafmt CLI to be installed. Use Home/Linux Brew.
+" Refer: http://scalameta.org/scalafmt/#Homebrew
+noremap <F6> :Autoformat<CR>
+let g:formatdef_scalafmt = "'scalafmt --stdin'"
+let g:formatters_scala = ['scalafmt']
 
 "============================================================================"
 " END KEY MAPPINGS
