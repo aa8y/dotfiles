@@ -19,6 +19,16 @@ set -gx PATH $HOME/.rbenv/shims $PATH
 set -gx MANPATH (brew --prefix)/share/man $MANPATH
 set -gx INFOPATH (brew --prefix)/share/info $INFOPATH
 
+## AWS CLI autocomplete
+# Ref: https://github.com/aws/aws-cli/issues/1079#issuecomment-252947755
+test -x (which aws_completer); and \
+  complete --command aws --no-files --arguments \
+    '(begin; \
+        set --local --export COMP_SHELL fish; \
+        set --local --export COMP_LINE (commandline); \
+        aws_completer | sed \'s/ $//\'; \
+      end)'
+
 ## Misc
 nvm use stable
 
