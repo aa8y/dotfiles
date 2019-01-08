@@ -1,7 +1,7 @@
-# Install `bass` using `fisherman`.
-# Fisherman: https://github.com/fisherman/fisherman
+# Install `bass` using `fisher`.
+# Fisher: https://github.com/jorgebucaran/fisher
 # Bass: https://github.com/edc/bass
 function nvm
-  bass source $BREW_HOME/opt/nvm/nvm.sh --no-use ';' nvm $argv
+  bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
 end
 
