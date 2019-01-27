@@ -5,7 +5,7 @@ set -x EDITOR vim
 # Run `git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew` the first time.
 set -gx BREW_HOME $HOME/.linuxbrew
 # Run `mkdir -p $GOPATH/bin` the first time.
-set -gx GOPATH $HOME/code/go
+set -gx GOPATH $HOME/.local/opt/go
 # Run `brew install go`.
 set -gx GOROOT $BREW_HOME/Cellar/go/1.9
 # Java
