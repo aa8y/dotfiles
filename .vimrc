@@ -115,22 +115,8 @@ syntax enable
 " set it to 2, which is same as the option below.
 set backspace=indent,eol,start
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set number of columns a tab counts for.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Number of spaces that a <Tab> in the file counts for.
-set tabstop=2
-
-" Hitting `Tab` in insert mode will produce the number of spaces specified in
-" `tabstop`.
-set expandtab
-
-" Number of columns text is indented with on (auto|re)indent operations.
-set shiftwidth=2
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Set auto-indentation on by default.
-set autoindent
+" Indentation settings
+source ~/.vim/indent.vimrc
 
 " Show the line and column number of the cursor position, separated by a comma
 " in the bottom-right corner of the screen.
