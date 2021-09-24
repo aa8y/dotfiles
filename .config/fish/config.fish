@@ -3,22 +3,35 @@ if status is-interactive
     ## Set default editor to Vim
     set -x EDITOR vim
 
+    if not functions -q fisher
+        set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+        curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+        fish -c fisher
+    end
+
     ## Set application specific paths
-    # Ref: https://docs.brew.sh/Homebrew-on-Linux#alternative-installation
-    set -gx BREW_HOME $HOME/.linuxbrew
+    # LinuxBrew - Install in a separate home directory to enable binary usage
+    # Ref: https://docs.brew.sh/Homebrew-on-Linux
+    set -gx BREW_HOME /home/linuxbrew/.linuxbrew
     # Run `mkdir -p $GOPATH/bin` the first time.
     set -gx GOPATH $HOME/.local/opt/go
     # Run `brew install go`.
     set -lx GOBASE $BREW_HOME/Cellar/go
     set -gx GOROOT (realpath $GOBASE)/(ls -rt $GOBASE | tail -1)
-    # Java
+    # JVM
+		# Install SDKMan: https://sdkman.io/install
+		# Run: fisher add reitzig/sdkman-for-fish
+    set -gx JVM_TOOLS_HOME $HOME/.sdkman/candidates
+    set -gx GRADLE_HOME $JVM_TOOLS_HOME/gradle/current
+    set -gx SBT_HOME $JVM_TOOLS_HOME/sbt/current
+    set -gx SCALA_HOME $JVM_TOOLS_HOME/scala/current
     set -gx JAVA_HOME $HOME/.sdkman/candidates/java/current
-    # Run `brew install nvm`.
+    # Run: brew install nvm.
+		# Run: fisher add FabioAntunes/fish-nvm
     set -gx NVM_DIR $HOME/.nvm
 
     ## Set global paths
-    set -gx PATH $BREW_HOME/bin $HOME/.local/bin $GOPATH/bin $JAVA_HOME/bin $PATH
-    set -gx PATH $HOME/.rbenv/shims $PATH
+    set -gx PATH $BREW_HOME/bin $HOME/.local/bin $GOPATH/bin $GRADLE_HOME/bin $JAVA_HOME/bin $SBT_HOME/bin $SCALA_HOME/bin $HOME/.rbenv/shims $PATH
     set -gx MANPATH (brew --prefix)/share/man $MANPATH
     set -gx INFOPATH (brew --prefix)/share/info $INFOPATH
 

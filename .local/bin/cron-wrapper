@@ -1,0 +1,4 @@
+# Ref: https://www.endpoint.com/blog/2015/02/cron-wrapper-keep-your-cron-jobs/
+#!/bin/bash -l
+
+exec "$@"
