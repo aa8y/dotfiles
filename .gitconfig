@@ -1,0 +1,12 @@
+[core]
+  commentChar = ";"
+[init]
+  defaultBranch = master
+[pull]
+  rebase = true
+[rebase]
+  autosquash = true
+  autostash = true
+[user]
+  name = Arun Allamsetty
+  email = arun.allamsetty@gmail.com
