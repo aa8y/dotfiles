@@ -13,21 +13,24 @@ if status is-interactive
     # LinuxBrew - Install in a separate home directory to enable binary usage
     # Ref: https://docs.brew.sh/Homebrew-on-Linux
     set -gx BREW_HOME /home/linuxbrew/.linuxbrew
+    # Homebrew for Mac
+    # Ref: https://brew.sh/
+    set -gx BREW_HOME /opt/homebrew
     # Run `mkdir -p $GOPATH/bin` the first time.
     set -gx GOPATH $HOME/.local/opt/go
-    # Run `brew install go`.
+    # Run `brew install go`
     set -lx GOBASE $BREW_HOME/Cellar/go
     set -gx GOROOT (realpath $GOBASE)/(ls -rt $GOBASE | tail -1)
     # JVM
-		# Install SDKMan: https://sdkman.io/install
-		# Run: fisher add reitzig/sdkman-for-fish
+    # Install SDKMan: https://sdkman.io/install
+    # Run: fisher install reitzig/sdkman-for-fish
     set -gx JVM_TOOLS_HOME $HOME/.sdkman/candidates
     set -gx GRADLE_HOME $JVM_TOOLS_HOME/gradle/current
     set -gx SBT_HOME $JVM_TOOLS_HOME/sbt/current
     set -gx SCALA_HOME $JVM_TOOLS_HOME/scala/current
     set -gx JAVA_HOME $HOME/.sdkman/candidates/java/current
     # Run: brew install nvm.
-		# Run: fisher add FabioAntunes/fish-nvm
+    # Run: fisher install FabioAntunes/fish-nvm
     set -gx NVM_DIR $HOME/.nvm
 
     ## Set global paths

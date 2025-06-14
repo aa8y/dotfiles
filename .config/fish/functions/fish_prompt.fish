@@ -1,6 +1,9 @@
-# Install
-# Powerline shell: https://github.com/banga/powerline-shell#setup
-# Powerline fonts: https://github.com/powerline/fonts
+# Powerline Go
+# Install: brew install powerline-go
+# Ref: https://github.com/justjanne/powerline-go?tab=readme-ov-file#installation
+#
+# Powerline fonts
+# Ref: https://github.com/powerline/fonts
 function fish_prompt
-  powerline-shell --shell bare $status
+  powerline-go -error $status -jobs (count (jobs -p))
 end
